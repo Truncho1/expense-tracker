@@ -6,24 +6,5 @@
       "id": 1
     }
   ],
-  "expenses": [
-    {
-      "title": "car",
-      "amount": 78000,
-      "userId": 1,
-      "id": 1
-    },
-    {
-      "title": "breead",
-      "amount": 1,
-      "userId": 1,
-      "id": 2
-    },
-    {
-      "title": "beer ",
-      "amount": 3,
-      "userId": 1,
-      "id": 3
-    }
-  ]
+  "expenses": []
 }
