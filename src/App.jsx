@@ -6,14 +6,12 @@ import Register from './pages/Register'
 function App() {
   return (
     <div>
-      {/* Навигационно меню */}
       <nav style={{ padding: '15px', background: '#f0f0f0', marginBottom: '20px' }}>
         <Link to="/" style={{ marginRight: '15px', fontWeight: 'bold' }}>Dashboard</Link>
         <Link to="/login" style={{ marginRight: '15px', fontWeight: 'bold' }}>Login</Link>
         <Link to="/register" style={{ fontWeight: 'bold' }}>Register</Link>
       </nav>
 
-      {/* Тук се зареждат самите страници */}
       <div style={{ padding: '20px' }}>
         <Routes>
           <Route path="/" element={<Dashboard />} />
