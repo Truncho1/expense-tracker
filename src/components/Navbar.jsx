@@ -13,19 +13,44 @@ export default function Navbar()
     navigate('/login')
   }
 
+  
+  const linkStyle = { color: 'white', textDecoration: 'none', fontWeight: '500', fontSize: '1.1rem' }
+
   return (
-    <nav style={{ padding: '15px', background: '#f0f0f0', marginBottom: '20px', display: 'flex', gap: '15px' }}>
-      <div style={{ fontWeight: 'bold', marginRight: 'auto' }}>Expense Tracker</div>
+    <nav style={{ 
+      padding: '15px 30px', 
+      background: '#2c3e50', 
+      color: 'white',
+      display: 'flex', 
+      alignItems: 'center',
+      gap: '20px',
+      boxShadow: '0 4px 6px rgba(0,0,0,0.1)' 
+    }}>
+      <div style={{ fontWeight: 'bold', fontSize: '1.4rem', marginRight: 'auto', letterSpacing: '1px' }}>
+        💰 ExpenseTracker
+      </div>
       
       {user ? (
         <>
-          <Link to="/">Dashboard</Link>
-          <button onClick={handleLogout} style={{ cursor: 'pointer' }}>Logout ({user.email})</button>
+          <Link to="/" style={linkStyle}>Dashboard</Link>
+          <button 
+            onClick={handleLogout} 
+            style={{ 
+              background: '#e74c3c', 
+              color: 'white', 
+              border: 'none', 
+              padding: '8px 15px', 
+              borderRadius: '5px',
+              cursor: 'pointer',
+              fontWeight: 'bold'
+            }}>
+            Logout ({user.email})
+          </button>
         </>
       ) : (
         <>
-          <Link to="/login">Login</Link>
-          <Link to="/register">Register</Link>
+          <Link to="/login" style={linkStyle}>Login</Link>
+          <Link to="/register" style={linkStyle}>Register</Link>
         </>
       )}
     </nav>
