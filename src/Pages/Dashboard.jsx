@@ -1,6 +1,7 @@
 import { useState, useEffect, useContext } from 'react'
 import axios from 'axios'
 import { AuthContext } from '../context/AuthContext'
+import ExpenseForm from '../components/ExpenseForm'
 
 export default function Dashboard() 
 {
@@ -27,6 +28,11 @@ export default function Dashboard()
     fetchExpenses()
   }, [user])
 
+  const handleExpenseAdded = (newExpense) => 
+  {
+    setExpenses([...expenses, newExpense])
+  }
+
   if (!user) 
   {
     return (
@@ -40,8 +46,10 @@ export default function Dashboard()
     <div>
       <h2>My Expenses Dashboard</h2>
       
+      <ExpenseForm onExpenseAdded={handleExpenseAdded} />
+      
       {expenses.length === 0 ? (
-        <p>No expenses found. The list is empty.</p>
+        <p>No expenses found. Add some above!</p>
       ) : (
         <ul style={{ listStyleType: 'none', padding: 0 }}>
           {expenses.map((expense) => (
